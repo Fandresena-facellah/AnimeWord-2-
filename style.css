@@ -1,0 +1,401 @@
+
+/* =========================
+   1. CONFIGURATION GÉNÉRALE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fond: #080914;
+    --fond-carte: #111426;
+    --bleu: #38bdf8;
+    --violet: #a855f7;
+    --blanc: #f8fafc;
+    --texte: #b8bfd3;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fond);
+    color: var(--blanc);
+    line-height: 1.6;
+    padding-bottom: 52px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   2. BARRE DE NAVIGATION
+========================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #0b0c19;
+    border-bottom: 1px solid #22243c;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--bleu);
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--texte);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--bleu);
+}
+
+/* =========================
+   3. SECTION ACCUEIL
+========================= */
+
+.hero {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(168, 85, 247, 0.24),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(56, 189, 248, 0.15),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #0b0c19, #11102a);
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.subtitle {
+    color: var(--bleu);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.hero h1 span,
+.section-title h2 span,
+.about h2 span {
+    color: var(--violet);
+}
+
+.description {
+    max-width: 560px;
+    color: var(--texte);
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #2563eb, #9333ea);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #7c3aed66;
+}
+
+/* =========================
+   4. TITRES DES SECTIONS
+========================= */
+
+.catalogue,
+.genres {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title > p:last-child {
+    color: var(--texte);
+}
+
+/* =========================
+   5. CARTES D'ANIMES
+========================= */
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.anime-card {
+    background-color: var(--fond-carte);
+    border: 1px solid #252742;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.anime-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--violet);
+    box-shadow: 0 8px 28px #7c3aed22;
+}
+
+.anime-card img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.anime-info {
+    padding: 18px;
+}
+
+.genre {
+    color: var(--bleu);
+    font-size: 12px;
+}
+
+.anime-info h3 {
+    font-size: 21px;
+    margin: 8px 0;
+}
+
+.anime-info p {
+    color: var(--texte);
+    font-size: 14px;
+    min-height: 66px;
+}
+
+.rating {
+    color: #facc15;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+/* =========================
+   6. GENRES
+========================= */
+
+.genre-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.genre-box {
+    padding: 15px 24px;
+    background-color: var(--fond-carte);
+    border: 1px solid #292b4a;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.genre-box:hover {
+    border-color: var(--bleu);
+    color: var(--bleu);
+    transform: scale(1.04);
+}
+
+/* =========================
+   7. À PROPOS
+========================= */
+
+.about {
+    text-align: center;
+    padding: 60px 8%;
+    background: linear-gradient(135deg, #101126, #17102b);
+}
+
+.about h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--texte);
+}
+
+/* =========================
+   8. PIED DE PAGE
+========================= */
+
+footer {
+    text-align: center;
+    padding: 28px 8%;
+    color: var(--texte);
+    font-size: 13px;
+}
+
+/* =========================
+   9. PHRASES DÉFILANTES
+========================= */
+
+.marquee {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: linear-gradient(90deg, #172554, #581c87, #172554);
+    border-top: 1px solid var(--bleu);
+    padding: 14px 0;
+    z-index: 1000;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: defilement 28s linear infinite;
+}
+
+.marquee-track span {
+    flex-shrink: 0;
+    padding-right: 55px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+@keyframes defilement {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* =========================
+   10. ADAPTATION AUX ÉCRANS
+========================= */
+
+@media (max-width: 900px) {
+    .anime-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 560px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 65px 6%;
+        min-height: 400px;
+    }
+
+    .catalogue,
+    .genres {
+        padding: 55px 6%;
+    }
+
+    .anime-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .anime-card img {
+        height: 320px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .about h2 {
+        font-size: 25px;
+    }
+
+    .marquee {
+        padding: 12px 0;
+    }
+
+    .marquee-track span {
+        font-size: 13px;
+    }
+
+    body {
+        padding-bottom: 46px;
+    }
+}
+
+/* Respecte le réglage de réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
